@@ -9,13 +9,13 @@
 -- Target Devices: IS61WV5128BLL-10TI
 -- Tool versions: 1.0
 -- Description: This module is intented to work on Posedge development board with Spartan-6 FPGA working in 24 MHz.
-		-- 1- There are Four states for wrinting and Four states for reading. Each write/read state takes two cycles 
-		-- to fullfill SRAM timing constraints (The delay_signal is used to delay state machine in each write/read state).
+-- 1- There are Four states for wrinting and Four states for reading. Each write/read state takes two cycles 
+-- to fullfill SRAM timing constraints (The delay_signal is used to delay state machine in each write/read state).
 	
-		-- 2- The target SRAM is byte accessible and we should devide word access to byte access. Master specifies required bytes
-		-- with 4-bit xbus_sel_i signal. The machine state traverses states based on this select signal.
+-- 2- The target SRAM is byte accessible and we should devide word access to byte access. Master specifies required bytes
+-- with 4-bit xbus_sel_i signal. The machine state traverses states based on this select signal.
 	
-		-- 3- This module hardwires xbus_err_o to '0' and further improvement should handle error situations.
+-- 3- This module hardwires xbus_err_o to '0' and further improvement should handle error situations.
 -- Dependencies: 
 --
 -- Revision: 

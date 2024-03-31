@@ -59,10 +59,13 @@ entity sram_controller is
 end entity;
 
 architecture Behavioral of sram_controller is
-	-- There are Four states for wrinting and Four states for reading. Each write/read state takes two cycles 
+	-- 1- There are Four states for wrinting and Four states for reading. Each write/read state takes two cycles 
 	-- to fullfill SRAM timing constraints (The delay_signal is used to delay state machine in each write/read state).
-	-- The target SRAM is byte accessible and we should devide word access to byte access. Master specifies required bytes
+	
+	-- 2- The target SRAM is byte accessible and we should devide word access to byte access. Master specifies required bytes
 	-- with 4-bit xbus_sel_i signal. The machine state traverses states based on this select signal.
+	
+	-- 3- This module hardwires xbus_err_o to '0' and further improvement should handle error situations. 
 	
 	type 	 Sram_State is  (IDLE, READ0, READ1, READ2, READ3, WRITE0, WRITE1, WRITE2, WRITE3);
 	signal pr_state   	 	: Sram_State := IDLE;

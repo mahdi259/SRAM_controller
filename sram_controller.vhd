@@ -1,14 +1,14 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: M.M. Cheraghi
 -- 
 -- Create Date:    20:27:18 03/10/2024 
 -- Design Name: 
 -- Module Name:    sram_controller - Behavioral 
 -- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
+-- Target Devices: IS61WV5128BLL-10TI
+-- Tool versions: 1.0
+-- Description: This module is intented to work on Posedge development board with Spartan-6 FPGA working in 24 MHz.
 --
 -- Dependencies: 
 --

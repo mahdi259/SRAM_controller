@@ -195,10 +195,10 @@ begin
 						elsif(sel_reg(3) = '1')then
 							pr_state <= READ3;
 						else
-							pr_state       <= IDLE;
-							xbus_ack_o 	   <= '1';
-                     delay_signal	<= '1';
-                     xbus_dat_o 	   <= X"0000" & DATApin & xbus_dat_o_tmp(7 downto 0);
+							pr_state        <= IDLE;
+							xbus_ack_o 	<= '1';
+                     					delay_signal	<= '1';
+                     					xbus_dat_o 	<= X"0000" & DATApin & xbus_dat_o_tmp(7 downto 0);
 						end if;
 						---------------------------
 						
@@ -219,10 +219,10 @@ begin
 						if(sel_reg(3) = '1')then
 							pr_state <= READ3;
 						else
-							pr_state       <= IDLE;
-							xbus_ack_o 	   <= '1';
-                     delay_signal	<= '1';
-                     xbus_dat_o 	   <= X"00" & DATApin & xbus_dat_o_tmp(15 downto 0);
+							pr_state        <= IDLE;
+							xbus_ack_o 	<= '1';
+                     					delay_signal	<= '1';
+                     					xbus_dat_o 	<= X"00" & DATApin & xbus_dat_o_tmp(15 downto 0);
 						end if;
 						---------------------------
 						
@@ -240,10 +240,10 @@ begin
 						xbus_dat_o_tmp(31 downto 24) <= DATApin;
 						delay_signal		<= '0';
 						
-						pr_state   			<= IDLE;
-						xbus_ack_o 	      <= '1';
-                  delay_signal	   <= '1';
-                  xbus_dat_o 	      <= DATApin & xbus_dat_o_tmp(23 downto 0);
+						pr_state   	<= IDLE;
+						xbus_ack_o 	<= '1';
+			                  	delay_signal	<= '1';
+			                  	xbus_dat_o 	<= DATApin & xbus_dat_o_tmp(23 downto 0);
 					end if;
 		--------------------------------------
 				when WRITE0 =>
@@ -265,10 +265,10 @@ begin
 						elsif(sel_reg(3) = '1')then
 							pr_state <= WRITE3;
 						else
-							pr_state   			<= IDLE;
-							xbus_ack_o 			<= '1';
-							xbus_dat_o 			<= xbus_dat_i_reg;
-                     delay_signal		<= '1';
+							pr_state   		<= IDLE;
+							xbus_ack_o 		<= '1';
+							xbus_dat_o 		<= xbus_dat_i_reg;
+                     					delay_signal		<= '1';
 						end if;
 						---------------------------
 					end if;
@@ -294,7 +294,7 @@ begin
 							pr_state   			<= IDLE;
 							xbus_ack_o 			<= '1';
 							xbus_dat_o 			<= xbus_dat_i_reg;
-                     delay_signal		<= '1';
+                     					delay_signal			<= '1';
 						end if;
 						---------------------------
 					end if;
@@ -318,7 +318,7 @@ begin
 							pr_state   			<= IDLE;
 							xbus_ack_o 			<= '1';
 							xbus_dat_o 			<= xbus_dat_i_reg;
-                     delay_signal		<= '1';
+                     					delay_signal			<= '1';
 						end if;
 						---------------------------
 					end if;
@@ -335,11 +335,11 @@ begin
 					if(delay_signal = '1')then
 						xbus_dat_o_tmp <= xbus_dat_i_reg;
 						Sram_we    			<= '1';
-						delay_signal		<= '0';
+						delay_signal			<= '0';
 						pr_state   			<= IDLE;
 						xbus_ack_o 			<= '1';
 						xbus_dat_o 			<= xbus_dat_i_reg;
-                  delay_signal		<= '1';
+                  				delay_signal			<= '1';
 					end if;
 		--------------------------------------
 						

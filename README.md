@@ -10,7 +10,3 @@ CE        : 1 bit  --Active low chip enable
 OE        : 1 bit  --Active low output enable
 
 WE        : 1 bit  --Active low write enable
-
-
-This SRAM controller is only checked in simulation environment with NeoRV32 processor (reading and writing). Physical implementation needs further checks. The interface for this controller is wishbone. 
-
